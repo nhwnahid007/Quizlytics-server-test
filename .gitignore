@@ -1,5 +1,12 @@
 # Ignore settings.json
 settings.json
+.vscode/settings.json
+
+# Environment files
 .env
+
+# Logs
 *.log
+
+# Dependencies
 node_modules/
