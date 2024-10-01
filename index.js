@@ -13,7 +13,7 @@ const genAI = new GoogleGenerativeAI(process.env.AI_API_KEY)
 // middleware 
 app.use(cors({
     origin: [
-      // 'https://quizlytics.vercel.app',
+      'https://quizlytics.vercel.app',
       'http://localhost:3000'
     ],
   }));
@@ -40,7 +40,7 @@ async function run() {
     const allExamDataCollection = client.db('quiz_lytics_database').collection('all_exam');
     const onlyUserMarkCollection = client.db('quiz_lytics_database').collection('onlyUserMark');
 
-    // ===== API using AI
+    // ===== AI based dynamic data
     app.get("/quiz", async(req, res)=>{
         const category = req.query?.category;
         const skill = req.query?.skill
